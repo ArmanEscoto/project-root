@@ -27,6 +27,25 @@ $this->section('body');
             <th scope="col">Action</th>
         </tr>
     </thead>
+    <tbody>
+        <?php foreach($students as $student): ?>
+            <tr>
+                <th scope="row"><?= $student['id']; ?></th>
+                <td><?= $student['student_name']; ?></td>
+                <td><?= $student['student_id']; ?></td>
+                <td><?= $student['student_section']; ?></td>
+                <td><?= $student['student_courses']; ?></td>
+                <td><?= $student['student_batch']; ?></td>
+                <td><?= $student['student_grade_level']; ?></td>
+                <td><img src="/uploads/<?= $student['student_profile']; ?>" alt="" with="100"></td>
+                <td>
+                    <a href="/students/edit<?= $student['id']; ?>" class="btn btn-primary">Edit</a>
+                    <a href="/students/delete<?= $student['id']; ?>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+
+        <?php endforeach; ?>
+    </tbody>
 </table>
 
 

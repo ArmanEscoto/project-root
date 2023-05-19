@@ -9,7 +9,10 @@ class StudentsController extends BaseController
 {
     public function index()
     {
-        return view('students/list');
+        $fetchStudent = new StudentsModel();
+        $data['students'] = $fetchStudent->findAll();
+
+        return view('students/list', $data);
     }
 
     public function createStudent()
@@ -33,7 +36,7 @@ class StudentsController extends BaseController
             'student_name' => $this->request->getPost('studentName'),
             'student_id' => $this->request->getPost('studentNum'),
             'student_section' => $this->request->getPost('studentSection'),
-            'student_course' => $this->request->getPost('studentCourse'),
+            'student_courses' => $this->request->getPost('studentCourse'),
             'student_batch' => $this->request->getPost('studentBatch'),
             'student_grade_level' => $this->request->getPost('studentLevel'),
             'student_profile' => $imageName,

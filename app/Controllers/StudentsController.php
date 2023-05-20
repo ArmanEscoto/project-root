@@ -39,7 +39,7 @@ class StudentsController extends BaseController
             'student_courses' => $this->request->getPost('studentCourse'),
             'student_batch' => $this->request->getPost('studentBatch'),
             'student_grade_level' => $this->request->getPost('studentLevel'),
-            'student_profile' => $imageName,
+            // 'student_profile' => $imageName,
 
         );
 
@@ -49,19 +49,55 @@ class StudentsController extends BaseController
         // store student
     }
     
-    public function editStudent()
+    public function editStudent($id)
     {
-        return view('students/edit');
+        $fetchStudent = new StudentsModel();
+        $data['student'] = $fetchStudent->where('id', $id)->first();
+        
+        return view('students/edit', $data);
     }
 
     public function updateStudent($id)
     {
-        //update students
+         //update students
+
+        $updateStudent = new StudentsModel();
+        $db = db_connect();
+
+        if($img = $this->request->getFile('studentProfile')) {
+            if($img->isValid() && !$img->hasMoved()) {
+                $imageName = $img->getRandomName();
+                $img->move('uploads/', $imageName);
+            }
+        }
+
+        if(!empty($_FILES['studentProfile']['name'])){
+            $db->query("UPDATE tbl_studinfo SET student_profile = '$imageName' WHERE id ='id'");
+        }
+
+        $data = array (
+            'student_name' => $this->request->getPost('studentName'),
+            'student_id' => $this->request->getPost('studentNum'),
+            'student_section' => $this->request->getPost('studentSection'),
+            'student_courses' => $this->request->getPost('studentCourse'),
+            'student_batch' => $this->request->getPost('studentBatch'),
+            'student_grade_level' => $this->request->getPost('studentLevel'),
+
+        );
+
+        $updateStudent->update($id, $data);
+
+        return redirect()->to('/students')->with('success', 'Student Update Succesfuly!');
+       
     }
 
     public function deleteStudent($id)
     {
         //delete student
+        $deleteStudent = new StudentsModel();
+        $deleteStudent->delete($id);
+
+        return redirect()->to('/students')->with('success', 'Student Delete Succesfuly!');
     }
 
 }

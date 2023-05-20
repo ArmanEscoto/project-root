@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 19, 2023 at 08:20 AM
+-- Generation Time: May 20, 2023 at 05:18 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -32,18 +32,18 @@ CREATE TABLE `tbl_studinfo` (
   `student_name` text NOT NULL,
   `student_id` text NOT NULL,
   `student_section` text NOT NULL,
-  `student_course` text NOT NULL,
+  `student_courses` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `student_batch` text NOT NULL,
-  `student_grade_level` text NOT NULL,
-  `student_profile` text NOT NULL
+  `student_grade_level` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `tbl_studinfo`
 --
 
-INSERT INTO `tbl_studinfo` (`id`, `student_name`, `student_id`, `student_section`, `student_course`, `student_batch`, `student_grade_level`, `student_profile`) VALUES
-(1, 'Arman', '20000_64672eca74cd4', '1', '', '2023', '3', '1684484044_294f3b2868183c24bf02.png');
+INSERT INTO `tbl_studinfo` (`id`, `student_name`, `student_id`, `student_section`, `student_courses`, `student_batch`, `student_grade_level`) VALUES
+(1, 'Arman Escoto', '20000_64672eca74cd4', '5', 'BSCS', '2023', '3'),
+(2, 'Arman Domingo', '20000_6467842f2c921', '2', 'it', '2023', '3');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `tbl_studinfo`
 -- AUTO_INCREMENT for table `tbl_studinfo`
 --
 ALTER TABLE `tbl_studinfo`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

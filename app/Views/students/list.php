@@ -23,7 +23,7 @@ $this->section('body');
             <th scope="col">Student Course</th>
             <th scope="col">Student Batch</th>
             <th scope="col">Student Grade Level</th>
-            <th scope="col">Student Profile</th>
+            <!-- <th scope="col">Student Profile</th> -->
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -37,10 +37,10 @@ $this->section('body');
                 <td><?= $student['student_courses']; ?></td>
                 <td><?= $student['student_batch']; ?></td>
                 <td><?= $student['student_grade_level']; ?></td>
-                <td><img src="/uploads/<?= $student['student_profile']; ?>" alt="" with="100"></td>
+                <!-- <td><img src="/uploads/     $student['student_profile']; ?>" alt="" with="100"></td> -->
                 <td>
-                    <a href="/students/edit<?= $student['id']; ?>" class="btn btn-primary">Edit</a>
-                    <a href="/students/delete<?= $student['id']; ?>" class="btn btn-danger">Delete</a>
+                    <a href="/students/edit/<?= $student['id']; ?>" class="btn btn-primary">Edit</a>
+                    <a href="/students/delete/<?= $student['id']; ?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
 

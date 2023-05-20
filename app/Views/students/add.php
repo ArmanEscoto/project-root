@@ -20,8 +20,8 @@ $this->section('body');
         <input type="text" class="form-control" name="studentSection" >
     </div>
     <div class="mb-3">
-        <label for="studentCousre" class="form-label">Student Course</label>
-        <input type="text" class="form-control" name="studentCousre" >
+        <label for="studentCourse" class="form-label">Student Course</label>
+        <input type="text" class="form-control" name="studentCourse" >
     </div>
     <div class="mb-3">
         <label for="studentBatch" class="form-label">Student Batch</label>
@@ -31,10 +31,10 @@ $this->section('body');
         <label for="studentLevel" class="form-label">Student Grade Level</label>
         <input type="text" class="form-control" name="studentLevel" >
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label for="studentProfile" class="form-label">Student Profile</label>
         <input type="file" class="form-control" name="studentProfile" >
-    </div>
+    </div> -->
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

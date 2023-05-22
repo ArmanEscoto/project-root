@@ -31,10 +31,6 @@ $this->section('body');
         <label for="studentLevel" class="form-label">Student Grade Level</label>
         <input type="text" class="form-control" name="studentLevel" value="<?= $student['student_grade_level']; ?>">
     </div>
-    <!-- <div class="mb-3">
-        <label for="studentProfile" class="form-label">Student Profile</label>
-        <input type="file" class="form-control" name="studentProfile" value="<?= $student['student_name']; ?>">
-    </div> -->
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

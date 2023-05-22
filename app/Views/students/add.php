@@ -31,10 +31,6 @@ $this->section('body');
         <label for="studentLevel" class="form-label">Student Grade Level</label>
         <input type="text" class="form-control" name="studentLevel" >
     </div>
-    <!-- <div class="mb-3">
-        <label for="studentProfile" class="form-label">Student Profile</label>
-        <input type="file" class="form-control" name="studentProfile" >
-    </div> -->
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
